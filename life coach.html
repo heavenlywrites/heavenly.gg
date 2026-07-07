@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heavenly — Life Coach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FDF1F3;
+    --ink: #20301F;
+    --ink-soft: #5B6A55;
+    --teal: #3F6357;
+    --teal-dark: #2C4A40;
+    --ochre: #B9821A;
+    --card: #FFFBFC;
+    --line: rgba(32,48,31,0.14);
+  }
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 18% 12%, #ffe3ea 0%, transparent 45%),
+      radial-gradient(circle at 85% 88%, #ffe9ee 0%, transparent 50%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    padding:16px;
+  }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+
+  .card{
+    width:100%;
+    max-width:430px;
+    max-height:100vh;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:clamp(22px,4vh,34px) clamp(22px,4vw,32px);
+    box-shadow:0 30px 60px rgba(32,48,31,0.14);
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:clamp(10px,1.6vh,16px);
+  }
+
+  .avatar{
+    width:clamp(64px,11vh,84px);
+    height:clamp(64px,11vh,84px);
+    border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, #cdd9c8, #b9c6b3 70%);
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; color:var(--teal-dark); font-size:11px;
+    overflow:hidden;
+  }
+  .avatar img{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+
+  .eyebrow{
+    font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--teal);
+  }
+  h1{
+    font-family:'Fraunces', serif; font-weight:600; letter-spacing:-0.01em;
+    font-size:clamp(24px,4.2vh,32px); margin:0; line-height:1.05;
+  }
+  .subtitle{
+    font-size:clamp(11px,1.6vh,12.5px); color:var(--ink-soft); font-weight:500;
+    margin-top:8px;
+  }
+  .tagline{
+    font-size:clamp(10.5px,3.4vw,14px); line-height:1.45; color:var(--ink-soft);
+    margin:0; white-space:nowrap;
+  }
+
+  .rating{
+    display:inline-flex; align-items:center; gap:6px;
+    background:#FCE1E7; border:1px solid #F6C9D3;
+    color:var(--ink-soft); font-weight:700; font-size:12.5px;
+    padding:6px 14px; border-radius:100px;
+  }
+  .rating .stars{ color:#C08497; letter-spacing:1px; }
+  .rating span{ color:var(--ink-soft); font-weight:500; }
+
+  .cta{
+    background:#C08497; color:#fff; text-decoration:none;
+    font-weight:600; font-size:clamp(12px,1.6vh,13px);
+    padding:clamp(7px,1.1vh,9px) 18px; border-radius:100px;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .cta:hover{ background:#A66C7E; transform:translateY(-2px); }
+  .cta:focus-visible, .icon-btn:focus-visible{ outline:2px solid var(--ochre); outline-offset:3px; }
+
+  .icons{ display:flex; gap:clamp(8px,1.6vw,12px); justify-content:center; flex-wrap:wrap; }
+  .icon-btn{
+    width:clamp(36px,5.2vh,42px); height:clamp(36px,5.2vh,42px);
+    border-radius:50%; background:transparent; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; color:var(--ink);
+    text-decoration:none; transition:border-color .15s ease, color .15s ease, transform .15s ease;
+  }
+  .icon-btn:hover{ border-color:var(--teal); color:var(--teal); transform:translateY(-2px); }
+  .icon-btn svg{ width:17px; height:17px; }
+
+  .foot{ font-size:11px; color:var(--ink-soft); }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="avatar" id="avatar">
+      <img
+        src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/photo.jpg"
+        alt="Heavenly"
+        onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';">
+      <span id="avatar-fallback" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">Photo</span>
+    </div>
+
+    <div>
+      <h1>Heavenly</h1>
+      <div class="subtitle">Remote Life Coach</div>
+    </div>
+
+    <p class="tagline">Helping ambitious people live an ambitious life.</p>
+
+    <div class="rating"><span class="stars">★★★★★</span> 5.0 <span>&middot; 20+ clients</span></div>
+
+    <a class="cta" href="mailto:im@heavenly.gg?subject=I%27d%20like%20to%20book%20a%20free%20call&body=Hi%20Heavenly%2C%0D%0A%0D%0AI%27d%20like%20to%20book%20a%20free%20call%20with%20you.%0D%0A%0D%0AMy%20name%3A%0D%0AWhat%20I%27d%20like%20to%20discuss%3A%0D%0ABest%20days%2Ftimes%20for%20me%3A%0D%0A%0D%0AThanks!">Book a Free Call</a>
+
+    <div class="icons">
+      <a class="icon-btn" href="https://instagram.com/jammy" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+      </a>
+      <a class="icon-btn" href="https://youtube.com/obsessings" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="icon-btn" href="mailto:im@heavenly.gg" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+      </a>
+    </div>
+
+    <div class="foot">Philadelphia, PA &nbsp;·&nbsp; im@heavenly.gg</div>
+  </div>
+
+</body>
+</html>
